@@ -1,12 +1,18 @@
 <template>
   <main class="p-5">
-      
+      <Gallery />
   </main>
 </template>
 
 <script>
-export default {
+import Gallery from '@/components/Gallery.vue';
 
+export default {
+    name: 'Main',
+    components: {
+        Gallery, 
+    }  
+        
 }
 </script>
 
@@ -17,6 +23,7 @@ export default {
 main {
     flex-grow: 1;
     background-color: $bg-secondary;
+    color: $txt-color-primary;
 }
 
 </style>

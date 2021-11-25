@@ -22,19 +22,20 @@ import Main from '@/components/Main.vue';
 
 
 
+
 export default {
   name: 'App',
   components: {
     Header,
-    Main, 
+    Main,
 
   }
 }
 </script>
 
 <style lang="scss">
-@import '@/styles/globals.scss';
-@import '~bootstrap/scss/bootstrap.scss';
-@import '@/styles/variables.scss';
+  @import '@/styles/globals.scss';
+  @import '~bootstrap/scss/bootstrap.scss';
+  @import '@/styles/variables.scss';
 </style>
 
