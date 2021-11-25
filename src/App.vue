@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss">
   @import '@/styles/globals.scss';
-  @import '~bootstrap/scss/bootstrap.scss';
   @import '@/styles/variables.scss';
+  @import '~bootstrap/scss/bootstrap.scss';
 </style>
 

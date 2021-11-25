@@ -1,5 +1,5 @@
 <template>
-  <header class="p-2">
+  <header>
       <div class="img-box">
         <img src="../assets/logo.png" alt="Spotify Logo">
       </div>
@@ -12,10 +12,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/styles/variables.scss';
+<style lang="scss" scoped>  
+
+    @import '@/styles/variables.scss';
+
     header {
         background-color: $bg-primary;
+        padding: 1rem;
     }
     .img-box {
         width: 50px;
