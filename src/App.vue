@@ -33,6 +33,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/styles/globals.scss';
 @import '~bootstrap/scss/bootstrap.scss';
+@import '@/styles/variables.scss';
 </style>
 
