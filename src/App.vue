@@ -33,9 +33,7 @@ export default {
     computed: {
         filterMusic() {
             return this.musicList.filter((album) => {
-                return album.genre
-                    .toLowerCase()
-                    .includes(this.choice.toLowerCase());
+                return album.genre.toLowerCase().includes(this.choice.toLowerCase());
             });
         },
     },

@@ -11,7 +11,9 @@
         @change="$emit('choice', userChoice)"
         >
             <option value="">Seleziona genere</option>
-            <option v-for="genre in genres" :key="genre" :value="genre">{{ genre }}</option>
+            <option v-for="genre in genres" :key="genre" :value="genre">
+                {{ genre }}
+            </option>
            
         </select>
       </form>
