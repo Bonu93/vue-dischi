@@ -2,9 +2,7 @@
     <div id="app">
         <Header @choice="pickChoice" />
 
-        <Gallery
-          :musicList="filterMusic"
-           />
+        <Gallery :musicList="filterMusic" />
     </div>
 </template>
 
@@ -23,7 +21,7 @@ export default {
     data() {
         return {
             musicList: [],
-            choice: '',
+            choice: "",
         };
     },
 
@@ -32,11 +30,13 @@ export default {
     },
 
     computed: {
-      filterMusic() {
-        return this.musicList.filter((album) => {
-          return album.genre.toLowerCase().includes(this.choice.toLowerCase())
-        })
-      }
+        filterMusic() {
+            return this.musicList.filter((album) => {
+                return album.genre
+                    .toLowerCase()
+                    .includes(this.choice.toLowerCase());
+            });
+        },
     },
 
     methods: {
@@ -50,17 +50,14 @@ export default {
         },
 
         pickChoice(text) {
-          this.choice = text;
+            this.choice = text;
         },
-
-        
     },
 };
-
 </script>
 
 <style lang="scss">
-  @import "@/styles/globals.scss";
-  @import "@/styles/variables.scss";
-  @import "~bootstrap/scss/bootstrap.scss";
+@import "@/styles/globals.scss";
+@import "@/styles/variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 </style>
