@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Header @choice="pickChoice" />
+        <Header @choice="pickChoice" :genres="genres"/>
 
         <Gallery :musicList="filterMusic" />
     </div>
@@ -22,6 +22,7 @@ export default {
         return {
             musicList: [],
             choice: "",
+            genres: [],
         };
     },
 
@@ -45,12 +46,25 @@ export default {
                 .get("https://flynn.boolean.careers/exercises/api/array/music")
                 .then((result) => {
                     this.musicList = result.data.response;
+                    this.getGenres();
                 })
                 .catch((err) => console.log(err));
+
+
         },
 
         pickChoice(text) {
             this.choice = text;
+        },
+
+        getGenres() {
+          this.musicList.forEach((album) => {
+            if (!this.genres.includes(album.genre)) {
+              this.genres.push(album.genre);
+            }
+               
+           
+          })
         },
     },
 };

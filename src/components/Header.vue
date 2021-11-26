@@ -11,10 +11,8 @@
         @change="$emit('choice', userChoice)"
         >
             <option value="">Seleziona genere</option>
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-            <option value="jazz">Jazz</option>
-            <option value="metal">Metal</option>
+            <option v-for="genre in genres" :key="genre" :value="genre">{{ genre }}</option>
+           
         </select>
       </form>
     
@@ -24,6 +22,10 @@
 <script>
 export default {
     name: 'Header',
+    props: {
+        genres: Array,
+    }, 
+
     data () {
         return {
            userChoice: '',
