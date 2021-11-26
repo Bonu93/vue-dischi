@@ -1,86 +1,80 @@
 <template>
-  <div class="music-gallery mt-5">
-    <div class="container">
-      <div class="row justify-content-center g-0" v-if="musicList.length !== 0">
-        <div class="column p-2" v-for="(album, i) in musicList" :key="`album-${i}`">
-          <Card 
-          :title="album.title"
-          :image="album.poster"
-          :artist="album.author"
-          :year="album.year"
-          :genre="album.genre"
-          />
-        </div>
-        
-        
-      </div>
-      
-      <div class="loader text-center" v-else>
-        <h2>Loading...</h2>
-        <div class="my-5">
-          <img src="../assets/logo.png" alt="">
-          
-        </div>
-      </div>
-    </div>
+    <main>
+        <div class="music-gallery mt-5">
+            <div class="container">
+                <div
+                    class="row justify-content-center g-0"
+                    v-if="musicList.length !== 0"
+                >
+                    <div
+                        class="column p-2"
+                        v-for="(album, i) in musicList"
+                        :key="`album-${i}`"
+                    >
+                        <Card
+                            :title="album.title"
+                            :image="album.poster"
+                            :artist="album.author"
+                            :year="album.year"
+                            :genre="album.genre"
+                        />
+                    </div>
+                </div>
 
-      
-  </div>
+                <div class="loader text-center" v-else>
+                    <h2>Loading...</h2>
+                    <div class="my-5">
+                        <img src="../assets/logo.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </template>
 
 <script>
 
-import axios from 'axios';
-import Card from '@/components/Card.vue'
+import Card from "@/components/Card.vue";
 
 export default {
-
-    name: 'Gallery',
+    name: "Gallery",
     components: {
-      Card,
-    }, 
-
-    data () {
-      return {
-        musicList: [],
-      }
+        Card,
     },
 
-    created () {
-      this.getMusicList(); 
+    props: {
+      musicList: Array,
     },
 
-    methods: {
-      getMusicList() {
-        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-          .then((result) => {
-            this.musicList = result.data.response;
-          })
-          .catch(err => console.log(err))
-      }
-    },
 }
 </script>
 
 <style lang="scss" scoped>
-  @import '@/styles/variables.scss';
+@import "@/styles/variables.scss";
 
-  .column {
+main {
+    flex-grow: 1;
+    overflow: auto;
+    background-color: $bg-secondary;
+    color: $txt-color-primary;
+}
+
+.column {
     width: calc(100% / 8);
-  }
+}
 
-  img {
-      width: 300px;
-      margin: 2rem 0;
-      animation: pulse 1s infinite alternate;
-  }
+img {
+    width: 300px;
+    margin: 2rem 0;
+    animation: pulse 1s alternate infinite;
+}
 
-  @keyframes pulse {
+@keyframes pulse {
     from {
-      transform: scale(1);
+        transform: scale(1);
     }
     to {
-      transfomr: scale(1.5);    }
-  }
-
+        transfomr: scale(1.5);
+    }
+}
 </style>

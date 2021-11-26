@@ -4,7 +4,12 @@
         <img src="../assets/logo.png" alt="Spotify Logo">
       </div>
       <form class="mx-5">
-        <select name="Filter" id="Filter" class="px-5 py-1">
+        <select 
+        name="Filter" id="Filter" 
+        class="px-5 py-1" 
+        v-model="userChoice"
+        @change="$emit('choice', userChoice)"
+        >
             <option value="">Seleziona genere</option>
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>
@@ -19,6 +24,11 @@
 <script>
 export default {
     name: 'Header',
+    data () {
+        return {
+           userChoice: '',
+        }
+    },
 }
 </script>
 
