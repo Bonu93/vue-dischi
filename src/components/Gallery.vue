@@ -22,10 +22,11 @@
                 </div>
 
                 <div class="loader text-center" v-else>
-                    <h2>Loading...</h2>
+                    
                     <div class="my-5">
                         <img src="../assets/logo.png" alt="" />
                     </div>
+                    <h2>Loading...</h2>
                 </div>
             </div>
         </div>
@@ -62,18 +63,21 @@ main {
     width: calc(100% / 8);
 }
 
-img {
-    width: 300px;
-    margin: 2rem 0;
+.loader {
     animation: pulse 1s alternate infinite;
+    img {
+        width: 300px;
+        // transform: scale(1);
+    }
 }
 
+
 @keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transfomr: scale(1.5);
-    }
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(1.3);
+  }
 }
 </style>
