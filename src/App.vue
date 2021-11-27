@@ -27,7 +27,7 @@ export default {
     },
 
     created() {
-        // this.getMusicList();
+        this.getMusicList();
     },
 
     computed: {
