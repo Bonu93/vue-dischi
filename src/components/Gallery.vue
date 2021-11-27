@@ -64,7 +64,7 @@ main {
 }
 
 .loader {
-    animation: pulse 1s alternate infinite;
+    animation: pulse 1s linear alternate infinite;
     img {
         width: 300px;
         // transform: scale(1);
